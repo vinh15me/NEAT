@@ -1,17 +1,22 @@
-import java.io.File;
-import java.nio.file.Path;
+import java.io.IOException;
 import java.util.LinkedList;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
-public class Engine {
+public class Engine
+{
     private static final LinkedList<Rule> rules = new LinkedList<>();
-    private static File logFile;
+    private static final FileHandler fileHandler;
+    public static final Logger logger = Logger.getLogger("neat");
 
-    public static boolean addRule(Rule rule) {
+    public static boolean addRule(Rule rule)
+    {
         rules.push(rule);
         return true;
     }
 
-    public static boolean editRule(Rule rule) // add params
+    public static boolean editRule(Rule rule) // TODO: add params
     {
         return false;
     }
@@ -20,11 +25,25 @@ public class Engine {
         return rules.remove(rule);
     }
 
-    public static boolean sort() {
-        return false;
+    public static boolean sort()
+    {
+        for (Rule rule : rules)
+            if (!rule.run()) return false;
+
+        return true;
     }
 
-    private static void log(String log) {
-
+    // Set up logger
+    static
+    {
+        try
+        {
+            fileHandler = new FileHandler("neat.log", true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            logger.addHandler(fileHandler);
+        } catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 }

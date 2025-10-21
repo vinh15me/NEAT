@@ -2,12 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class GUI extends JFrame {
-
-
-    private boolean toggled = false;
-
-    public GUI() {
+public class GUI extends JFrame
+{
+    public GUI()
+    {
         super("Welcome to File Organizer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 150);
@@ -23,7 +21,7 @@ public class GUI extends JFrame {
         JButton b5 = new JButton("Exit Program");
 
         // Button 1: show message
-        b1.addActionListener((ActionEvent e) -> openSortWindow());
+        b1.addActionListener((ActionEvent e) -> addRuleWindow()); // openSortWindow());
         // Button 2: counter
         b2.addActionListener((ActionEvent e) ->
                 JOptionPane.showMessageDialog(this, "Which rules do you want to delete?", "Deleting Rules",
@@ -55,6 +53,28 @@ public class GUI extends JFrame {
         panel.add(b5);
 
         setContentPane(panel);
+    }
+
+    private void addRuleWindow() {
+        JFrame frame = new JFrame("Add rule");
+        frame.setSize(500, 200);
+        frame.setLocationRelativeTo(this);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel textPanel = new JPanel(new GridLayout(3, 2, 0, 10));
+        textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        textPanel.add(new JLabel("Enter a regular expression:"));
+        textPanel.add(new JTextField(30));
+
+        textPanel.add(new JLabel("Source folder:"));
+        textPanel.add(new JTextField(30));
+
+        textPanel.add(new JLabel("Destination folder:"));
+        textPanel.add(new JTextField(30));
+
+        frame.add(textPanel);
+        frame.setVisible(true);
     }
 
     private void openSortWindow() {

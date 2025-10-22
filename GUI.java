@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.util.regex.Pattern;
 
 public class GUI extends JFrame
 {
@@ -34,13 +36,15 @@ public class GUI extends JFrame
 
         // Button 4: open file chooser
         b4.addActionListener((ActionEvent e) -> {
-            JFileChooser chooser = new JFileChooser();
-            int result = chooser.showOpenDialog(this);
-            if (result == JFileChooser.APPROVE_OPTION) {
-                JOptionPane.showMessageDialog(this,
-                        "You chose:\n" + chooser.getSelectedFile().getAbsolutePath(),
-                        "File Selected", JOptionPane.PLAIN_MESSAGE);
-            }
+//            JFileChooser chooser = new JFileChooser();
+//            int result = chooser.showOpenDialog(this);
+//            if (result == JFileChooser.APPROVE_OPTION) {
+//                JOptionPane.showMessageDialog(this,
+//                        "You chose:\n" + chooser.getSelectedFile().getAbsolutePath(),
+//                        "File Selected", JOptionPane.PLAIN_MESSAGE);
+//            }
+
+            Engine.sort();
         });
 
         // Button 5: exit
@@ -61,17 +65,33 @@ public class GUI extends JFrame
         frame.setLocationRelativeTo(this);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel textPanel = new JPanel(new GridLayout(3, 2, 0, 10));
+        JPanel textPanel = new JPanel(new GridLayout(4, 2, 0, 10));
         textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         textPanel.add(new JLabel("Enter a regular expression:"));
-        textPanel.add(new JTextField(30));
+        JTextField pattern = new JTextField(10);
+        textPanel.add(pattern);
 
         textPanel.add(new JLabel("Source folder:"));
-        textPanel.add(new JTextField(30));
+        JTextField sourceFolder = new JTextField(10);
+        textPanel.add(sourceFolder);
 
         textPanel.add(new JLabel("Destination folder:"));
-        textPanel.add(new JTextField(30));
+        JTextField destinationFolder = new JTextField(10);
+        textPanel.add(destinationFolder);
+
+        Button addButton = new Button("Add Rule");
+        addButton.addActionListener((ActionEvent e) -> {
+            Engine.addRule(new Rule(new File(sourceFolder     .getText()),
+                                    new File(destinationFolder.getText()),
+                                    Pattern.compile(pattern.getText() ))
+            );
+
+            pattern.setText("");
+            sourceFolder.setText("");
+            destinationFolder.setText("");
+        });
+        textPanel.add(addButton);
 
         frame.add(textPanel);
         frame.setVisible(true);

@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.logging.Logger;
 import java.util.regex.*;
@@ -37,19 +38,18 @@ public class Rule
         {
             if (pattern.matcher(currFile.getName()).matches())
             {
-                move(currFile);
-                log.info("Moved " + currFile.getName() + " to " + destination.getName());
+                log.info("Moved " + currFile.getName() + " to " + destination.getName() + " with code " + (move(currFile) ? 1 : 0));
             }
         }
 
         return false;
     }
 
-    private boolean move(File file)
+    private boolean move(@org.jetbrains.annotations.NotNull File file)
     {
         try
         {
-            Files.move(file.toPath(), destination.toPath().resolve(file.toPath()));
+            Files.move(file.toPath(), Paths.get(destination.getAbsolutePath(), file.getName()));
             return true;
         } catch (IOException e)
         {

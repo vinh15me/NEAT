@@ -36,14 +36,6 @@ public class GUI extends JFrame
 
         // Button 4: open file chooser
         b4.addActionListener((ActionEvent e) -> {
-//            JFileChooser chooser = new JFileChooser();
-//            int result = chooser.showOpenDialog(this);
-//            if (result == JFileChooser.APPROVE_OPTION) {
-//                JOptionPane.showMessageDialog(this,
-//                        "You chose:\n" + chooser.getSelectedFile().getAbsolutePath(),
-//                        "File Selected", JOptionPane.PLAIN_MESSAGE);
-//            }
-
             Engine.sort();
         });
 

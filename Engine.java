@@ -27,9 +27,17 @@ public class Engine
 
     public static boolean sort()
     {
-        for (Rule rule : rules)
-            if (!rule.run()) return false;
-
+        for (Rule rule : rules){
+            System.out.println();
+            System.out.println("origin: " + rule.getOrigin());
+            System.out.println("destination: " + rule.getDestination());
+            System.out.println("pattern: " + rule.getPattern());
+            if (!rule.run()) {
+                System.out.println("Rule failed");
+                return false;
+            }
+        }
+        System.out.println("sort: true");
         return true;
     }
 

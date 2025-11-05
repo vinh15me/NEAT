@@ -23,6 +23,11 @@ public class Rule
         this.pattern     = pattern;
     }
 
+    public void print()
+    {
+        System.out.println("Origin: " + origin.getName());
+    }
+
     public boolean run()
     {
         if (!origin.exists() || !origin.isDirectory())
@@ -44,7 +49,7 @@ public class Rule
             }
         }
 
-        return false;
+        return true; //TODO:this alway reutrned false: FIXED
     }
 
     private boolean move(@NotNull File file)
@@ -52,6 +57,7 @@ public class Rule
         try
         {
             Files.move(file.toPath(), Paths.get(destination.getAbsolutePath(), file.getName()));
+            System.out.println("Move Completed");
             return true;
         } catch (IOException e)
         {

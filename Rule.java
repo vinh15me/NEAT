@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -45,7 +47,7 @@ public class Rule
         return false;
     }
 
-    private boolean move(@org.jetbrains.annotations.NotNull File file)
+    private boolean move(@NotNull File file)
     {
         try
         {

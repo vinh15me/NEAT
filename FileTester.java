@@ -15,12 +15,12 @@ public class FileTester {
                 {"Test4", "json"}
         };
 
-        createFiles(targetFolder, filesToCreate);
+        createFiles(targetFolder, files);
     }
 
     public static void createFiles(String folderPath, String[][] files) {
         File folder = new File(folderPath);
-        
+
         if (!folder.exists()) {
             if (folder.mkdirs()) {
                 System.out.println("Created folder: " + folderPath);

@@ -20,3 +20,9 @@ INFO: Moved Test1.java to Folder 2 with code 1
 INFO: Moved Temporary File.txt to Folder 1 with code 1
 נוב׳ 12, 2025 11:49:20 AM Rule run
 INFO: Moved Test3.txt to Folder 1 with code 1
+Nov 19, 2025 11:30:44 AM Rule run
+SEVERE: Origin directory does not exist: source
+Nov 19, 2025 11:33:15 AM Rule run
+INFO: Moved d.java to destination with code 1
+Nov 19, 2025 11:33:15 AM Rule run
+SEVERE: Origin directory does not exist: source

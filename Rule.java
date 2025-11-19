@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -52,7 +50,7 @@ public class Rule
         return true; //TODO:this alway reutrned false: FIXED
     }
 
-    private boolean move(@NotNull File file)
+    private boolean move(File file)
     {
         try
         {
@@ -74,3 +72,4 @@ public class Rule
     public void setDestination(File path)      { destination = path;       }
     public void setPattern(Pattern newPattern) { pattern     = newPattern; }
 }
+

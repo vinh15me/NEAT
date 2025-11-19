@@ -25,6 +25,11 @@ public class Engine
         return rules.remove(rule);
     }
 
+    public static LinkedList<Rule> getRules()
+    {
+        return rules;
+    }
+
     public static boolean sort()
     {
         for (Rule rule : rules){

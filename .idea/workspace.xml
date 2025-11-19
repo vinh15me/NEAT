@@ -3,19 +3,44 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="87b8ae04-2e94-4dbf-81f4-3232c24473c0" name="Changes" comment="" />
+    <list default="true" id="bc5fe0ed-1fdb-49d2-bf5c-369d5562e569" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEAT Testing/Destination/Temporary File.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEAT Testing/Destination/Test3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEAT Testing/Destination/help me.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/NEAT/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/NEAT/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/NEAT/NEAT Testing/Source/help me.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neat.log" beforeDir="false" afterPath="$PROJECT_DIR$/neat.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NEAT/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NEAT/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NEAT/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NEAT/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/Rule.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NEAT/Rule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/neat.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NEAT/neat.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,46 +48,49 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;yellowstar396&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/vinh15me/NEAT.git&quot;,
-    &quot;accountId&quot;: &quot;5d4ad762-54cd-4eb0-a8da-81195b27bb8a&quot;
   }
 }</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="354YLJLdamIZwgVUoBec1KDRWAF" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="35i8FarKX3fl3Tl17TQHDKj8FZv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.FileTester.executor": "Run",
-    "Application.GUI.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/College/Fall 2025/CS 250/Code/NEAT"
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="87b8ae04-2e94-4dbf-81f4-3232c24473c0" name="Changes" comment="" />
-      <created>1762370754334</created>
+      <changelist id="bc5fe0ed-1fdb-49d2-bf5c-369d5562e569" name="Changes" comment="" />
+      <created>1763581430809</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1762370754334</updated>
+      <updated>1763581430809</updated>
+      <workItem from="1763581433340" duration="24000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

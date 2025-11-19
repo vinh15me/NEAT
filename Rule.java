@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -43,16 +41,21 @@ public class Rule
 
         for (File currFile : Objects.requireNonNull(origin.listFiles()))
         {
+            System.out.println(currFile.getName());
+            System.out.println(pattern.matcher(currFile.getName()));
+            System.out.println(getPattern());
+
             if (pattern.matcher(currFile.getName()).matches())
             {
+                move(currFile); //this was added because it was never called
                 log.info("Moved " + currFile.getName() + " to " + destination.getName() + " with code " + (move(currFile) ? 1 : 0));
             }
         }
 
-        return true; //TODO:this alway reutrned false: FIXED
+        return true; //this always returned false
     }
 
-    private boolean move(@NotNull File file)
+    private boolean move(File file)
     {
         try
         {

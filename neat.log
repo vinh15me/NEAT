@@ -12,11 +12,3 @@ Nov 05, 2025 11:17:59 AM Rule run
 SEVERE: Origin directory does not exist: sdfadsfasdf
 Nov 05, 2025 11:24:10 AM Rule run
 SEVERE: Origin directory does not exist: Destination
-נוב׳ 12, 2025 11:49:19 AM Rule run
-INFO: Moved Test2.html to Folder 3 with code 1
-נוב׳ 12, 2025 11:49:20 AM Rule run
-INFO: Moved Test1.java to Folder 2 with code 1
-נוב׳ 12, 2025 11:49:20 AM Rule run
-INFO: Moved Temporary File.txt to Folder 1 with code 1
-נוב׳ 12, 2025 11:49:20 AM Rule run
-INFO: Moved Test3.txt to Folder 1 with code 1

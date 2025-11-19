@@ -2,18 +2,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.util.LinkedList;
 import java.util.regex.Pattern;
 
 public class GUI extends JFrame
 {
+    public JLabel rules;
+
     public GUI()
     {
         super("Welcome to File Organizer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 150);
+        setSize(800, 200);
         setLocationRelativeTo(null);
 
-        JPanel panel = new JPanel(new GridLayout(1, 5, 10, 10));
+        JPanel panel = new JPanel(new GridLayout(2, 1, 10, 10));
+        JPanel topPanel = new JPanel(new GridLayout(1, 5, 10, 10));
+        JPanel bottomPanel = new JPanel(new GridLayout(1, 5, 10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
         JButton b1 = new JButton("Add organizing rule");
@@ -21,6 +26,8 @@ public class GUI extends JFrame
         JButton b3 = new JButton("Edit Rule");
         JButton b4 = new JButton("Auto Sort");
         JButton b5 = new JButton("Exit Program");
+
+        rules = new JLabel("Rules:");
 
         // Button 1: show message
         b1.addActionListener((ActionEvent e) -> addRuleWindow()); // openSortWindow());
@@ -42,13 +49,35 @@ public class GUI extends JFrame
         // Button 5: exit
         b5.addActionListener((ActionEvent e) -> System.exit(0));
 
-        panel.add(b1);
-        panel.add(b2);
-        panel.add(b3);
-        panel.add(b4);
-        panel.add(b5);
+        panel.add(topPanel, BorderLayout.NORTH);
+        panel.add(bottomPanel, BorderLayout.SOUTH);
+        topPanel.add(b1);
+        topPanel.add(b2);
+        topPanel.add(b3);
+        topPanel.add(b4);
+        topPanel.add(b5);
+
+        bottomPanel.add(rules);
 
         setContentPane(panel);
+    }
+
+    private void updateRulesText() {
+        LinkedList<Rule> temp = Engine.getRules();
+        int index = 1;
+        StringBuilder rulesText = new StringBuilder ("<html>Rules: <br>");
+        for (Rule rule : temp){
+            rulesText.append("Rule ");
+            rulesText.append(index++);
+            rulesText.append(": Move \"");
+            rulesText.append(rule.getPattern());
+            rulesText.append("\" from \"");
+            rulesText.append(rule.getOrigin());
+            rulesText.append("\" to \"");
+            rulesText.append(rule.getDestination());
+            rulesText.append("\"<br>");
+        }
+        rules.setText(rulesText.toString());
     }
 
     private void addRuleWindow() {
@@ -77,8 +106,9 @@ public class GUI extends JFrame
             Engine.addRule(new Rule(new File(sourceFolder     .getText()),
                                     new File(destinationFolder.getText()),
                                     Pattern.compile(pattern.getText() ))
-            );
 
+            );
+            updateRulesText();
             pattern.setText("");
             sourceFolder.setText("");
             destinationFolder.setText("");

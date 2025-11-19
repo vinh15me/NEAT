@@ -5,7 +5,7 @@ public class FileTester {
 
     public static void main(String[] args) {
         // Enter your Source folder path here:
-        String targetFolder = "C:\\College\\Fall 2025\\CS 250\\Code\\NEAT\\NEAT Testing\\Source";
+        String targetFolder = "";
 
         //{ filename, extension }
         String[][] files = {

@@ -1,4 +1,5 @@
 import java.io.IOException;
+
 import java.util.LinkedList;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -21,8 +22,8 @@ public class Engine
         return false;
     }
 
-    public static boolean deleteRule(Rule rule) {
-        return rules.remove(rule);
+    public static boolean deleteRule(int number) {
+        return rules.remove(number);
     }
 
     public static LinkedList<Rule> getRules()

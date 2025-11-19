@@ -77,3 +77,4 @@ public class Rule
     public void setDestination(File path)      { destination = path;       }
     public void setPattern(Pattern newPattern) { pattern     = newPattern; }
 }
+

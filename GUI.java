@@ -74,7 +74,7 @@ public class GUI extends JFrame
 
         Button addButton = new Button("Add Rule");
         addButton.addActionListener((ActionEvent e) -> {
-            Engine.addRule(new Rule(new File(sourceFolder     .getText()),
+            Engine.addRule(new Rule(new File(sourceFolder.getText()),
                                     new File(destinationFolder.getText()),
                                     Pattern.compile(pattern.getText() ))
             );

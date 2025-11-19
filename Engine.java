@@ -22,8 +22,8 @@ public class Engine
         return false;
     }
 
-    public static boolean deleteRule(Rule rule) {
-        return rules.remove(rule);
+    public static boolean deleteRule(int number) {
+        return rules.remove(number);
     }
 
     public static boolean sort()

@@ -23,7 +23,8 @@ public class Engine
     }
 
     public static boolean deleteRule(int number) {
-        return rules.remove(number);
+        //return rules.remove(number);
+        return false;
     }
 
     public static LinkedList<Rule> getRules()

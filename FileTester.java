@@ -5,14 +5,14 @@ public class FileTester {
 
     public static void main(String[] args) {
         // Enter your Source folder path here:
-        String targetFolder = "";
+        String targetFolder = "C:\\College\\Fall 2025\\CS 250\\Code\\NEAT\\NEAT Testing\\Source";
 
         //{ filename, extension }
         String[][] files = {
-                {"Test1", "java"},
-                {"Test2", "html"},
-                {"Test3", "txt"},
-                {"Test4", "json"}
+                {"Test1_", "java"},
+                {"Test2_", "html"},
+                {"Test3_", "txt"},
+                {"Test4_", "json"}
         };
 
         createFiles(targetFolder, files);

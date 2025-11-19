@@ -66,3 +66,15 @@ Nov 12, 2025 11:52:17 AM Rule move
 SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\Test3.txt
 Nov 12, 2025 11:52:17 AM Rule run
 INFO: Moved Test3.txt to Destination with code 0
+Nov 19, 2025 11:39:58 AM Rule move
+SEVERE: NEAT Testing\Source\help me.txt
+Nov 19, 2025 11:39:58 AM Rule run
+INFO: Moved help me.txt to Destination with code 0
+Nov 19, 2025 11:39:58 AM Rule move
+SEVERE: NEAT Testing\Source\Temporary File.txt
+Nov 19, 2025 11:39:58 AM Rule run
+INFO: Moved Temporary File.txt to Destination with code 0
+Nov 19, 2025 11:39:58 AM Rule move
+SEVERE: NEAT Testing\Source\Test3.txt
+Nov 19, 2025 11:39:58 AM Rule run
+INFO: Moved Test3.txt to Destination with code 0

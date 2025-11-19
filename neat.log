@@ -12,3 +12,69 @@ Nov 05, 2025 11:17:59 AM Rule run
 SEVERE: Origin directory does not exist: sdfadsfasdf
 Nov 05, 2025 11:24:10 AM Rule run
 SEVERE: Origin directory does not exist: Destination
+Nov 05, 2025 11:46:49 AM Rule run
+INFO: Moved Temporary File.txt to Destination with code 1
+Nov 05, 2025 11:46:49 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Source\Temporary File.txt
+Nov 05, 2025 11:51:15 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\NEAT Testing\Source\Temporary File.txt
+Nov 05, 2025 11:51:15 AM Rule run
+INFO: Moved Temporary File.txt to Destination with code 0
+Nov 05, 2025 11:56:56 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\NEAT Testing\Destination\Temporary File.txt
+Nov 05, 2025 11:56:56 AM Rule run
+INFO: Moved Temporary File.txt to Source with code 0
+Nov 05, 2025 11:56:56 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\NEAT Testing\Source\Temporary File.txt
+Nov 05, 2025 11:56:56 AM Rule run
+INFO: Moved Temporary File.txt to Destination with code 0
+Nov 05, 2025 11:59:03 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\NEAT Testing\Destination\Temporary File.txt
+Nov 05, 2025 11:59:03 AM Rule run
+INFO: Moved Temporary File.txt to Source with code 0
+Nov 05, 2025 12:00:48 PM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Source\help me.txt
+Nov 05, 2025 12:00:48 PM Rule run
+INFO: Moved help me.txt to Destination with code 0
+Nov 05, 2025 12:00:48 PM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Source\Temporary File.txt
+Nov 05, 2025 12:00:48 PM Rule run
+INFO: Moved Temporary File.txt to Destination with code 0
+Nov 12, 2025 11:51:06 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Source\Test3.txt
+Nov 12, 2025 11:51:06 AM Rule run
+INFO: Moved Test3.txt to Destination with code 0
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Source\Test1.java
+Nov 12, 2025 11:52:17 AM Rule run
+INFO: Moved Test1.java to Destination with code 0
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\help me.txt
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\help me.txt
+Nov 12, 2025 11:52:17 AM Rule run
+INFO: Moved help me.txt to Destination with code 0
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\Temporary File.txt
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\Temporary File.txt
+Nov 12, 2025 11:52:17 AM Rule run
+INFO: Moved Temporary File.txt to Destination with code 0
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\Test3.txt
+Nov 12, 2025 11:52:17 AM Rule move
+SEVERE: C:\Users\vinh1\Documents\GitHub\NEAT\NEAT Testing\Destination\Test3.txt
+Nov 12, 2025 11:52:17 AM Rule run
+INFO: Moved Test3.txt to Destination with code 0
+Nov 19, 2025 11:39:58 AM Rule move
+SEVERE: NEAT Testing\Source\help me.txt
+Nov 19, 2025 11:39:58 AM Rule run
+INFO: Moved help me.txt to Destination with code 0
+Nov 19, 2025 11:39:58 AM Rule move
+SEVERE: NEAT Testing\Source\Temporary File.txt
+Nov 19, 2025 11:39:58 AM Rule run
+INFO: Moved Temporary File.txt to Destination with code 0
+Nov 19, 2025 11:39:58 AM Rule move
+SEVERE: NEAT Testing\Source\Test3.txt
+Nov 19, 2025 11:39:58 AM Rule run
+INFO: Moved Test3.txt to Destination with code 0

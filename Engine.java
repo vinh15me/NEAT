@@ -23,7 +23,11 @@ public class Engine
     }
 
     public static boolean deleteRule(int number) {
-        return rules.remove(number);
+        if(number > 0 && number <= rules.size()){
+            rules.remove(number);
+            return true;
+        }
+        return false;
     }
 
     public static boolean sort()

@@ -8,6 +8,6 @@
 /dataSources.local.xml
 
 oracleJdk-25/
-.*\.class
+*.class
 ./source/
 ./destination/

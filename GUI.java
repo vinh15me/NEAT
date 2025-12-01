@@ -32,9 +32,7 @@ public class GUI extends JFrame
         // Button 1: show message
         b1.addActionListener((ActionEvent e) -> addRuleWindow()); // openSortWindow());
         // Button 2: counter
-        b2.addActionListener((ActionEvent e) ->
-                JOptionPane.showMessageDialog(this, "Which rules do you want to delete?", "Deleting Rules",
-                        JOptionPane.INFORMATION_MESSAGE));
+        b2.addActionListener((ActionEvent e) -> deleteRuleWindow());
 
         // Button 3: toggle color
         b3.addActionListener((ActionEvent e) ->
@@ -80,6 +78,30 @@ public class GUI extends JFrame
         rules.setText(rulesText.toString());
     }
 
+    private void deleteRuleWindow() {
+        JFrame frame = new JFrame("Delete rule");
+        frame.setSize(500, 200);
+        frame.setLocationRelativeTo(this);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel textPanel = new JPanel(new GridLayout(4, 2, 0, 10));
+        textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        textPanel.add(new JLabel("Which rule do you want to delete: "));
+        JTextField ruleNum = new JTextField(10);
+        textPanel.add(ruleNum);
+
+
+        Button deleteButton = new Button("Delete Rule");
+        deleteButton.addActionListener((ActionEvent e) -> {
+            Engine.deleteRule(Integer.parseInt(ruleNum.getText()));
+            updateRulesText();
+        });
+        textPanel.add(deleteButton);
+
+        frame.add(textPanel);
+        frame.setVisible(true);
+    }
     private void addRuleWindow() {
         JFrame frame = new JFrame("Add rule");
         frame.setSize(500, 200);

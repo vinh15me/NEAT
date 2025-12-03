@@ -21,6 +21,14 @@ public class Rule
         this.pattern     = pattern;
     }
 
+    public static Rule fromDTO(RuleDTO dto) {
+        return new Rule(
+                new File(dto.originPath),
+                new File(dto.destinationPath),
+                Pattern.compile(dto.regex)
+        );
+    }
+
     public void print()
     {
         System.out.println("Origin: " + origin.getName());

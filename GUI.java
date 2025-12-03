@@ -110,6 +110,10 @@ public class GUI extends JFrame
 
             );
             updateRulesText();
+            pattern.setText("");
+            sourceFolder.setText("");
+            destinationFolder.setText("");
+
         });
         textPanel.add(editButton);
 

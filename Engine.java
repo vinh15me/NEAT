@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.io.IOException;
 
 import java.lang.reflect.Type;
@@ -20,28 +21,37 @@ public class Engine
     private static final FileHandler fileHandler;
     public static final Logger logger = Logger.getLogger("neat");
 
-    public static boolean addRule(Rule rule)
-    {
+    public boolean addRule(Rule rule) {
         rules.push(rule);
-
+        UpdateJson();
         return true;
     }
 
-    public static boolean editRule(int number, Rule rule) // TODO: add params
+    public boolean editRule(int number, Rule rule) // TODO: add params
     {
         if(number > 0 && number <= rules.size()+1){
             rules.set(number-1,rule);
+            UpdateJson();
             return true;
         } 
         return false;
     }
 
-    public static boolean deleteRule(int number) {
+    public boolean deleteRule(int number) {
         if(number > 0 && number <=rules.size()+1){
             rules.remove(number-1);
+            UpdateJson();
             return true;
         }
         return false;
+    }
+
+    public void UpdateJson() {
+        try (FileWriter writer = new FileWriter(RULES_FILE)) {
+            gson.toJson(rules, writer);
+        } catch (IOException e) {
+            e.printStackTrace(); // or handle it another way
+        }
     }
 
     public static LinkedList<Rule> getRules()

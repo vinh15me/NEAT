@@ -81,7 +81,7 @@ public class GUI extends JFrame
         frame.setLocationRelativeTo(this);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel textPanel = new JPanel(new GridLayout(4, 2, 0, 10));
+        JPanel textPanel = new JPanel(new GridLayout(5, 2, 0, 10));
         textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         textPanel.add(new JLabel("Which rule do you want to edit: "));
@@ -127,7 +127,7 @@ public class GUI extends JFrame
         frame.setLocationRelativeTo(this);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel textPanel = new JPanel(new GridLayout(4, 2, 0, 10));
+        JPanel textPanel = new JPanel(new GridLayout(3, 2, 0, 10));
         textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         textPanel.add(new JLabel("Which rule do you want to delete: "));

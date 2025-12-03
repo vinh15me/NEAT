@@ -1,12 +1,21 @@
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.LinkedList;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class Engine
 {
+    private static final String RULES_FILE = "rules.json";
+    private final Gson gson = new Gson();
+    private static final Type RULE_LIST_TYPE = new TypeToken<List<RuleDTO>>() {}.getType();
+
     private static final LinkedList<Rule> rules = new LinkedList<>();
     private static final FileHandler fileHandler;
     public static final Logger logger = Logger.getLogger("neat");
@@ -14,6 +23,7 @@ public class Engine
     public static boolean addRule(Rule rule)
     {
         rules.push(rule);
+
         return true;
     }
 

@@ -17,8 +17,12 @@ public class Engine
         return true;
     }
 
-    public static boolean editRule(Rule rule) // TODO: add params
+    public static boolean editRule(int number, Rule rule) // TODO: add params
     {
+        if(number > 0 && number <= rules.size()+1){
+            rules.set(number-1,rule);
+            return true;
+        } 
         return false;
     }
 

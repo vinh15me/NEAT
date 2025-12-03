@@ -35,9 +35,7 @@ public class GUI extends JFrame
         b2.addActionListener((ActionEvent e) -> deleteRuleWindow());
 
         // Button 3: toggle color
-        b3.addActionListener((ActionEvent e) ->
-                JOptionPane.showMessageDialog(this, "Which rules do you want to edit?", "Edit Rules",
-                        JOptionPane.INFORMATION_MESSAGE));
+        b3.addActionListener((ActionEvent e) -> editRuleWindow());
 
         // Button 4: open file chooser
         b4.addActionListener((ActionEvent e) -> {
@@ -77,7 +75,48 @@ public class GUI extends JFrame
         }
         rules.setText(rulesText.toString());
     }
+    private void editRuleWindow() {
+        JFrame frame = new JFrame("Edit rule");
+        frame.setSize(500, 200);
+        frame.setLocationRelativeTo(this);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+        JPanel textPanel = new JPanel(new GridLayout(4, 2, 0, 10));
+        textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        textPanel.add(new JLabel("Which rule do you want to edit: "));
+        JTextField ruleNum = new JTextField(10);
+        textPanel.add(ruleNum);
+        
+        textPanel.add(new JLabel("Enter a regular expression:"));
+        JTextField pattern = new JTextField(10);
+        textPanel.add(pattern);
+
+        textPanel.add(new JLabel("Source folder:"));
+        JTextField sourceFolder = new JTextField(10);
+        textPanel.add(sourceFolder);
+
+        textPanel.add(new JLabel("Destination folder:"));
+        JTextField destinationFolder = new JTextField(10);
+        textPanel.add(destinationFolder);
+
+
+
+        Button editButton = new Button("Edit Rule");
+        editButton.addActionListener((ActionEvent e) -> {
+             Engine.editRule(Integer.parseInt(ruleNum.getText()),new Rule(new File(sourceFolder     .getText()),
+                                    new File(destinationFolder.getText()),
+                                    Pattern.compile(pattern.getText() ))
+
+            );
+            updateRulesText();
+        });
+        textPanel.add(editButton);
+
+        frame.add(textPanel);
+        frame.setVisible(true);
+    }
+ 
     private void deleteRuleWindow() {
         JFrame frame = new JFrame("Delete rule");
         frame.setSize(500, 200);

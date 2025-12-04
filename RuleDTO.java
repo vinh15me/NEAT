@@ -4,6 +4,10 @@ public class RuleDTO {
     public String destinationPath;
     public String regex;
 
+    public RuleDTO() {
+        // Required for Gson to deserialize
+    }
+
     public RuleDTO(Rule rule) {
         this.originPath = rule.getOrigin().getAbsolutePath();
         this.destinationPath = rule.getDestination().getAbsolutePath();

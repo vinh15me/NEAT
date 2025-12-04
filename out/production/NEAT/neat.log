@@ -78,3 +78,15 @@ Nov 19, 2025 11:39:58 AM Rule move
 SEVERE: NEAT Testing\Source\Test3.txt
 Nov 19, 2025 11:39:58 AM Rule run
 INFO: Moved Test3.txt to Destination with code 0
+נוב׳ 19, 2025 12:27:34 PM Rule move
+SEVERE: C:\College\Fall 2025\CS 250\Code\NEAT\NEAT Testing\Source\Test3_.txt
+נוב׳ 19, 2025 12:27:34 PM Rule run
+INFO: Moved Test3_.txt to Destination with code 0
+Dec 03, 2025 11:21:47 AM Rule move
+SEVERE: /home/akj/NEAT/NEAT Testing/Source/ab.jav
+Dec 03, 2025 11:21:47 AM Rule run
+INFO: Moved ab.jav to Destination with code 0
+Dec 03, 2025 11:21:47 AM Rule move
+SEVERE: /home/akj/NEAT/NEAT Testing/Source/a.java
+Dec 03, 2025 11:21:47 AM Rule run
+INFO: Moved a.java to Destination with code 0

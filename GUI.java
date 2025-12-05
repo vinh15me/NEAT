@@ -261,14 +261,28 @@ public class GUI extends JFrame
         textPanel.add(sourceLabel);
         JTextField sourceFolder = new JTextField(10);
         styleInput(sourceFolder);
-        textPanel.add(sourceFolder);
+        JPanel sourceRow = new JPanel(new BorderLayout(6, 0));
+        sourceRow.setOpaque(false);
+        JButton sourceBrowse = new JButton("Browse");
+        styleButton(sourceBrowse, false);
+        sourceBrowse.addActionListener(e -> chooseDirectory(sourceFolder, dialog));
+        sourceRow.add(sourceFolder, BorderLayout.CENTER);
+        sourceRow.add(sourceBrowse, BorderLayout.EAST);
+        textPanel.add(sourceRow);
 
         JLabel destLabel = new JLabel("Destination folder:");
         styleLabel(destLabel);
         textPanel.add(destLabel);
         JTextField destinationFolder = new JTextField(10);
         styleInput(destinationFolder);
-        textPanel.add(destinationFolder);
+        JPanel destRow = new JPanel(new BorderLayout(6, 0));
+        destRow.setOpaque(false);
+        JButton destBrowse = new JButton("Browse");
+        styleButton(destBrowse, false);
+        destBrowse.addActionListener(e -> chooseDirectory(destinationFolder, dialog));
+        destRow.add(destinationFolder, BorderLayout.CENTER);
+        destRow.add(destBrowse, BorderLayout.EAST);
+        textPanel.add(destRow);
 
         JLabel helper = new JLabel("Tip: use regex like \".*\\.pdf\" to move all PDFs.");
         helper.setForeground(theme.textSubdued());
@@ -589,6 +603,16 @@ public class GUI extends JFrame
     private static String rgba(Color color, float alpha) {
         float a = Math.max(0f, Math.min(1f, alpha));
         return "rgba(" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + "," + a + ")";
+    }
+
+    private void chooseDirectory(JTextField targetField, Component parent) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setDialogTitle("Select folder");
+        int result = chooser.showOpenDialog(parent);
+        if (result == JFileChooser.APPROVE_OPTION && chooser.getSelectedFile() != null) {
+            targetField.setText(chooser.getSelectedFile().getAbsolutePath());
+        }
     }
 
     private Color lighten(Color color, int amount) {

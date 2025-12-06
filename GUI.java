@@ -126,9 +126,7 @@ public class GUI extends JFrame
 
         addRuleButton.addActionListener((ActionEvent e) -> addRuleWindow());
         deleteRuleButton.addActionListener((ActionEvent e) -> deleteRuleWindow());
-        editRuleButton.addActionListener((ActionEvent e) ->
-                JOptionPane.showMessageDialog(this, "Editing rules is not implemented yet.", "Edit Rules",
-                        JOptionPane.INFORMATION_MESSAGE));
+        editRuleButton.addActionListener((ActionEvent e) -> editRuleWindow());
         runAllButton.addActionListener((ActionEvent e) -> {
             boolean success = Engine.sort();
             String message = success ? "Auto-sort completed." : "Auto-sort failed. Check your rules and log.";
@@ -235,6 +233,139 @@ public class GUI extends JFrame
             }
         });
         textPanel.add(deleteButton);
+
+        dialog.add(textPanel);
+        dialog.setVisible(true);
+    }
+
+    private void editRuleWindow() {
+        if (ruleListModel.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "There are no rules to edit yet.", "Nothing to edit",
+                    JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        JDialog dialog = new JDialog(this, "Edit rule", true);
+        dialog.setSize(640, 340);
+        dialog.setLocationRelativeTo(this);
+        dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel textPanel = new JPanel(new GridLayout(6, 2, 10, 12));
+        textPanel.setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12));
+        textPanel.setBackground(theme.card());
+
+        JLabel whichLabel = new JLabel("Select the rule to edit:");
+        styleLabel(whichLabel);
+        textPanel.add(whichLabel);
+        JComboBox<String> ruleSelector = new JComboBox<>();
+        styleCombo(ruleSelector);
+        for (int i = 0; i < ruleListModel.size(); i++) {
+            ruleSelector.addItem(formatRuleSummary(ruleListModel.get(i), i));
+        }
+        textPanel.add(ruleSelector);
+
+        JLabel regexLabel = new JLabel("Regular expression:");
+        styleLabel(regexLabel);
+        textPanel.add(regexLabel);
+        JTextField pattern = new JTextField(10);
+        styleInput(pattern);
+        textPanel.add(pattern);
+
+        JLabel sourceLabel = new JLabel("Source folder:");
+        styleLabel(sourceLabel);
+        textPanel.add(sourceLabel);
+        JTextField sourceFolder = new JTextField(10);
+        styleInput(sourceFolder);
+        JPanel sourceRow = new JPanel(new BorderLayout(6, 0));
+        sourceRow.setOpaque(false);
+        JButton sourceBrowse = new JButton("Browse");
+        styleButton(sourceBrowse, false);
+        sourceBrowse.addActionListener(e -> chooseDirectory(sourceFolder, dialog));
+        sourceRow.add(sourceFolder, BorderLayout.CENTER);
+        sourceRow.add(sourceBrowse, BorderLayout.EAST);
+        textPanel.add(sourceRow);
+
+        JLabel destLabel = new JLabel("Destination folder:");
+        styleLabel(destLabel);
+        textPanel.add(destLabel);
+        JTextField destinationFolder = new JTextField(10);
+        styleInput(destinationFolder);
+        JPanel destRow = new JPanel(new BorderLayout(6, 0));
+        destRow.setOpaque(false);
+        JButton destBrowse = new JButton("Browse");
+        styleButton(destBrowse, false);
+        destBrowse.addActionListener(e -> chooseDirectory(destinationFolder, dialog));
+        destRow.add(destinationFolder, BorderLayout.CENTER);
+        destRow.add(destBrowse, BorderLayout.EAST);
+        textPanel.add(destRow);
+
+        Runnable populate = () -> {
+            int idx = ruleSelector.getSelectedIndex();
+            if (idx >= 0) {
+                Rule r = ruleListModel.get(idx);
+                pattern.setText(r.getPattern().pattern());
+                sourceFolder.setText(r.getOrigin().getAbsolutePath());
+                destinationFolder.setText(r.getDestination().getAbsolutePath());
+            }
+        };
+        populate.run();
+        ruleSelector.addActionListener(e -> populate.run());
+
+        JButton saveButton = new JButton("Save");
+        styleButton(saveButton, true);
+        saveButton.addActionListener((ActionEvent e) -> {
+            int idx = ruleSelector.getSelectedIndex();
+            if (idx < 0) {
+                showStatus("Select a rule to edit.", true);
+                return;
+            }
+            String patternText = pattern.getText().trim();
+            String sourceText = sourceFolder.getText().trim();
+            String destinationText = destinationFolder.getText().trim();
+
+            if (patternText.isEmpty() || sourceText.isEmpty() || destinationText.isEmpty()) {
+                showStatus("All fields are required.", true);
+                JOptionPane.showMessageDialog(dialog, "Please fill out all fields.", "Missing info",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            Pattern compiledPattern;
+            try {
+                compiledPattern = Pattern.compile(patternText);
+            } catch (PatternSyntaxException ex) {
+                showStatus("Invalid regular expression.", true);
+                JOptionPane.showMessageDialog(dialog, "Invalid regular expression: " + ex.getMessage(), "Regex error",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            File src = new File(sourceText);
+            File dest = new File(destinationText);
+            if (!src.exists() || !src.isDirectory()) {
+                showStatus("Source folder must exist.", true);
+                JOptionPane.showMessageDialog(dialog, "Source folder does not exist.", "Folder error",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (!dest.exists() || !dest.isDirectory()) {
+                showStatus("Destination folder must exist.", true);
+                JOptionPane.showMessageDialog(dialog, "Destination folder does not exist.", "Folder error",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Engine.editRule(idx + 1, new Rule(src, dest, compiledPattern));
+            syncRuleList();
+            showStatus("Updated rule " + (idx + 1), false);
+            dialog.dispose();
+        });
+        textPanel.add(saveButton);
+
+        JButton cancelButton = new JButton("Cancel");
+        styleButton(cancelButton, false);
+        cancelButton.addActionListener((ActionEvent e) -> dialog.dispose());
+        textPanel.add(cancelButton);
 
         dialog.add(textPanel);
         dialog.setVisible(true);

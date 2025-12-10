@@ -1,100 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b20b4460-3115-415b-8581-37b0d2d26033" name="Changes" comment="test2" />
+    <list default="true" id="f8018b50-dd6c-43ab-8af7-a7ebf668d86f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$BackgroundPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$GradientPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$GradientPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$RoundedBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$RoundedBorder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$RoundedButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$RoundedButtonUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$RuleCellRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$RuleCellRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI$Theme.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI$Theme.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEAT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NEAT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rule.class" beforeDir="false" afterPath="$PROJECT_DIR$/Rule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RuleDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/RuleDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/Engine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/FileTester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/Rule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NEAT/RuleDTO.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;yellowstar396&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "sjacob6484-cmyk"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/vinh15me/NEAT.git&quot;,
-    &quot;accountId&quot;: &quot;5d4ad762-54cd-4eb0-a8da-81195b27bb8a&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/vinh15me/NEAT.git",
+    "accountId": "29b70113-dba2-4b70-a4b9-04a309a76ec7"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="35iChSyK1ac0VeBUrEYMa5vPJQG" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="36fPSwgunHNxLV6MHNzfrKYlAM2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.FileTester.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/College/Fall 2025/CS 250/Libraries/gson-2.11.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/samir/Documents/GitHub/NEAT",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b20b4460-3115-415b-8581-37b0d2d26033" name="Changes" comment="" />
-      <created>1763582717990</created>
+      <changelist id="f8018b50-dd6c-43ab-8af7-a7ebf668d86f" name="Changes" comment="" />
+      <created>1765394656234</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1763582717990</updated>
+      <updated>1765394656234</updated>
     </task>
-    <task id="LOCAL‎-00001" summary="test">
-      <option name="closed" value="true" />
-      <created>1763584801419</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL‎-00001" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1763584801419</updated>
-    </task>
-    <task id="LOCAL‎-00002" summary="test2">
-      <option name="closed" value="true" />
-      <created>1763584906322</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL‎-00002" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1763584906322</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
-    <MESSAGE value="test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test2" />
   </component>
 </project>

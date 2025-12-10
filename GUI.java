@@ -67,6 +67,7 @@ public class GUI extends JFrame
     private JButton runAllButton;
     private JButton sortOptionsButton;   // <-- add this
     private JButton exitButton;
+    private JLabel hintLabel;
     private final List<AbstractButton> themedButtons = new ArrayList<>();
     private final HashMap<AbstractButton, Boolean> buttonPrimaries = new HashMap<>();
 
@@ -540,11 +541,18 @@ public class GUI extends JFrame
         sidebarPanel.add(navLabel);
         sidebarPanel.add(Box.createVerticalStrut(10));
 
+        hintLabel = new JLabel("Hint: type /* to add a rule");
+        styleLabel(hintLabel);
+        hintLabel.setFont(hintLabel.getFont().deriveFont(11f));
+        hintLabel.setForeground(theme.textSubdued());
+        hintLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        sidebarPanel.add(hintLabel);
+
         addRuleButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         editRuleButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         deleteRuleButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         runAllButton.setAlignmentX(Component.LEFT_ALIGNMENT);
-        sortOptionsButton.setAlignmentX(Component.LEFT_ALIGNMENT);   // << NEW
+        sortOptionsButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         themeToggle.setAlignmentX(Component.LEFT_ALIGNMENT);
         exitButton.setAlignmentX(Component.LEFT_ALIGNMENT);
 

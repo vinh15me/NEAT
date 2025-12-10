@@ -541,7 +541,7 @@ public class GUI extends JFrame
         sidebarPanel.add(navLabel);
         sidebarPanel.add(Box.createVerticalStrut(10));
 
-        hintLabel = new JLabel("Hint: type .*\. to add a rule");
+        hintLabel = new JLabel("Hint: type \".*\\.(file type)\" to add a rule");
         styleLabel(hintLabel);
         hintLabel.setFont(hintLabel.getFont().deriveFont(11f));
         hintLabel.setForeground(theme.textSubdued());

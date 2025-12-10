@@ -65,6 +65,7 @@ public class GUI extends JFrame
     private JButton deleteRuleButton;
     private JButton editRuleButton;
     private JButton runAllButton;
+    private JButton sortOptionsButton;   // <-- add this
     private JButton exitButton;
     private final List<AbstractButton> themedButtons = new ArrayList<>();
     private final HashMap<AbstractButton, Boolean> buttonPrimaries = new HashMap<>();
@@ -109,18 +110,21 @@ public class GUI extends JFrame
         deleteRuleButton = new JButton("Delete Rule");
         editRuleButton = new JButton("Edit Rule");
         runAllButton = new JButton("Auto Sort");
+        sortOptionsButton = new JButton("Sort Options");   // <-- new
         exitButton = new JButton("Exit");
 
         addRuleButton.setToolTipText("Create a new regex-based organizing rule");
         deleteRuleButton.setToolTipText("Remove an existing rule");
         editRuleButton.setToolTipText("Edit an existing rule");
         runAllButton.setToolTipText("Run all rules now (Auto Sort)");
+        sortOptionsButton.setToolTipText("Open sort options window");   // << NEW
         themeToggle.setToolTipText("Toggle between light and dark themes");
 
         styleButton(addRuleButton, true);
         styleButton(deleteRuleButton, false);
         styleButton(editRuleButton, false);
         styleButton(runAllButton, true);
+        styleButton(sortOptionsButton, false);   // << NEW
         styleButton(exitButton, false);
         styleButton(themeToggle, false);
 
@@ -134,6 +138,7 @@ public class GUI extends JFrame
             JOptionPane.showMessageDialog(this, message, success ? "Sort complete" : "Sort error",
                     success ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.ERROR_MESSAGE);
         });
+        sortOptionsButton.addActionListener((ActionEvent e) -> openSortWindow());  // << ADD THIS
         exitButton.addActionListener((ActionEvent e) -> System.exit(0));
 
         headerPanel.add(titleWrap, BorderLayout.WEST);
@@ -539,6 +544,7 @@ public class GUI extends JFrame
         editRuleButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         deleteRuleButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         runAllButton.setAlignmentX(Component.LEFT_ALIGNMENT);
+        sortOptionsButton.setAlignmentX(Component.LEFT_ALIGNMENT);   // << NEW
         themeToggle.setAlignmentX(Component.LEFT_ALIGNMENT);
         exitButton.setAlignmentX(Component.LEFT_ALIGNMENT);
 
@@ -549,6 +555,8 @@ public class GUI extends JFrame
         sidebarPanel.add(deleteRuleButton);
         sidebarPanel.add(Box.createVerticalStrut(6));
         sidebarPanel.add(runAllButton);
+        sidebarPanel.add(Box.createVerticalStrut(6));               // << NEW
+        sidebarPanel.add(sortOptionsButton);
 
         sidebarPanel.add(Box.createVerticalStrut(12));
         JSeparator sep = new JSeparator();
@@ -793,26 +801,26 @@ public class GUI extends JFrame
         }
 
         @Override
-        public void paint(Graphics g, JComponent c) {
-            AbstractButton b = (AbstractButton) c;
-            Graphics2D g2 = (Graphics2D) g.create();
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+public void paint(Graphics g, JComponent c) {
+    Graphics2D g2 = (Graphics2D) g.create();
+    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-            int w = c.getWidth();
-            int h = c.getHeight();
-            Color base = primary ? theme.accent() : lighten(theme.card(), isDark ? 24 : 12);
-            Color base2 = primary ? lighten(theme.accent(), 20) : lighten(theme.card(), isDark ? 40 : 20);
-            Color border = lighten(theme.stroke(), isDark ? 10 : 0);
+    int w = c.getWidth();
+    int h = c.getHeight();
 
-            GradientPaint gp = new GradientPaint(0, 0, base, 0, h, base2);
-            g2.setPaint(gp);
-            g2.fillRoundRect(0, 0, w, h, 16, 16);
+    Color base = primary ? theme.accent() : lighten(theme.card(), isDark ? 24 : 12);
+    Color base2 = primary ? lighten(theme.accent(), 20) : lighten(theme.card(), isDark ? 40 : 20);
+    Color border = lighten(theme.stroke(), isDark ? 10 : 0);
 
-            g2.setColor(border);
-            g2.drawRoundRect(0, 0, w - 1, h - 1, 16, 16);
+    GradientPaint gp = new GradientPaint(0, 0, base, 0, h, base2);
+    g2.setPaint(gp);
+    g2.fillRoundRect(0, 0, w, h, 16, 16);
 
-            g2.dispose();
-            super.paint(g, c);
-        }
+    g2.setColor(border);
+    g2.drawRoundRect(0, 0, w - 1, h - 1, 16, 16);
+
+    g2.dispose();
+    super.paint(g, c);
+}
     }
 }

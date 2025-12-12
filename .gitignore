@@ -1,3 +1,5 @@
 /Engine.class
 /GUI.class
 /Rule.class
+*.class
+*.json

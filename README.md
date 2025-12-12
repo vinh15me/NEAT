@@ -1,4 +1,4 @@
-# **NEAT
+# NEAT
 
 **NEAT** is a lightweight and flexible file-sorting program that uses
 user-defined rulesets to organize files automatically. It supports both
